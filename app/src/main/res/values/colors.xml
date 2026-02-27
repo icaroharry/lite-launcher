@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#FF121212</color>
+    <color name="surface">#FF1E1E1E</color>
+    <color name="on_background">#FFFFFFFF</color>
+    <color name="on_background_dim">#B3FFFFFF</color>
+    <color name="search_background">#33FFFFFF</color>
+    <color name="overlay">#99000000</color>
+
+    <!-- Accent palette -->
+    <color name="accent_white">#FFFFFFFF</color>
+    <color name="accent_blue">#FF42A5F5</color>
+    <color name="accent_cyan">#FF26C6DA</color>
+    <color name="accent_teal">#FF26A69A</color>
+    <color name="accent_green">#FF66BB6A</color>
+    <color name="accent_yellow">#FFFFEE58</color>
+    <color name="accent_orange">#FFFFA726</color>
+    <color name="accent_red">#FFEF5350</color>
+    <color name="accent_pink">#FFEC407A</color>
+    <color name="accent_purple">#FFAB47BC</color>
+</resources>

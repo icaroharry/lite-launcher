@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="accent_color_names">
+        <item>White</item>
+        <item>Blue</item>
+        <item>Cyan</item>
+        <item>Teal</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Red</item>
+        <item>Pink</item>
+        <item>Purple</item>
+    </string-array>
+
+    <integer-array name="accent_colors">
+        <item>0xFFFFFFFF</item>
+        <item>0xFF42A5F5</item>
+        <item>0xFF26C6DA</item>
+        <item>0xFF26A69A</item>
+        <item>0xFF66BB6A</item>
+        <item>0xFFFFEE58</item>
+        <item>0xFFFFA726</item>
+        <item>0xFFEF5350</item>
+        <item>0xFFEC407A</item>
+        <item>0xFFAB47BC</item>
+    </integer-array>
+</resources>

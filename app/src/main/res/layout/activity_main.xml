@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/overlay"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="64dp"
+        android:paddingVertical="32dp">
+
+        <!-- Dummy view to steal initial focus away from EditText -->
+        <View
+            android:id="@+id/focusDummy"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Clock / Date top-right -->
+        <TextView
+            android:id="@+id/clockText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/on_background_dim"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Search bar at top -->
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/focus_highlight"
+            android:focusedByDefault="false"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:nextFocusDown="@id/appsRecycler"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/on_background"
+            android:textColorHint="@color/on_background_dim"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/settingsButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Settings button top-right, next to clock -->
+        <TextView
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/focus_highlight"
+            android:focusable="true"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:text="@string/settings"
+            android:textColor="@color/on_background_dim"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/searchInput"
+            app:layout_constraintEnd_toStartOf="@id/clockText"
+            app:layout_constraintStart_toEndOf="@id/searchInput" />
+
+        <!-- Favorites section label -->
+        <TextView
+            android:id="@+id/favoritesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Favorites"
+            android:textColor="@color/on_background_dim"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchInput" />
+
+        <!-- Favorites (horizontal row) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/favoritesRecycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/favoritesLabel" />
+
+        <!-- All apps list (single vertical list, main content) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/appsRecycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:focusable="true"
+            android:nextFocusUp="@id/searchInput"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/favoritesRecycler" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
